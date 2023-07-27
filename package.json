@@ -13,6 +13,9 @@
     "name": "Anthony Houston",
     "email": "tonhousto@gmail.com"
   },
+  "scripts": {
+    "back": "git add . && git commit -m 'a' && git push"
+  },
   "main": "fss",
   "module": "fss.mjs",
   "browser": "fss.js",

@@ -1,0 +1,28 @@
+{
+  "name": "fs-suite",
+  "description": "A library for arbitrary-precision decimal and non-decimal arithmetic",
+  "version": "0.1.1",
+  "keywords": [
+    "fs"
+  ],
+  "main": "fss",
+  "module": "fss.mjs",
+  "browser": "fss.js",
+  "types": "fss.d.ts",
+  "exports": {
+    ".": {
+      "types": "./fss.d.ts",
+      "require": "./fss.js",
+      "import": "./fss.mjs",
+      "browser": "./fss.js"
+    },
+    "./fss.mjs": "./fss.mjs",
+    "./fss.js": "./fss.js",
+    "./package.json": "./package.json"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "license": "MIT",
+  "dependencies": {}
+}

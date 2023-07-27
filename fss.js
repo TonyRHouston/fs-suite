@@ -1,9 +1,9 @@
-import fs  from 'fs';
+import fs from 'fs';
 import path from "path";
 
 export const getFiles = function (dirPath, arrayOfFiles) {
-  if(!fs.existsSync(dirPath))
-  return -1;
+  if (!fs.existsSync(dirPath))
+    return -1;
   const files = fs.readdirSync(dirPath)
 
   arrayOfFiles = arrayOfFiles || []
@@ -20,8 +20,8 @@ export const getFiles = function (dirPath, arrayOfFiles) {
 
 export const search = (_input, _root) => {
   const files = getFiles(_root);
-if(files == -1)
-return undefined;
+  if (files == -1)
+    return undefined;
   for (let x = 0; x < files.length; x++)
     if (files[x].includes(_input))
       return files[x];
@@ -41,15 +41,19 @@ export const write = (dir, content) => {
   fs.writeFileSync(dir, content);
 }
 
-function recursive(start){
-  let dir = path.dirname(start);
-  if (!fs.existsSync(dir)) 
-    recursive(dir)  
-    
-    if(!fs.existsSync(start))
-    fs.mkdirSync(start);  
+export const parse = (path) => {
+  return JSON.parse(read(path));
 }
 
-export const _version = "1.0.0";
+function recursive(start) {
+  let dir = path.dirname(start);
+  if (!fs.existsSync(dir))
+    recursive(dir)
+
+  if (!fs.existsSync(start))
+    fs.mkdirSync(start);
+}
+
+export const _version = "1.0.4";
 
 export default _version;
